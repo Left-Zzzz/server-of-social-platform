@@ -1,0 +1,10 @@
+syntax = "proto3";
+package ssp;
+message PhotoInfoBase
+{
+    optional int32 ver = 1;
+    optional int32 user_id = 2;
+    optional int32 last_publisher = 3;
+    optional int32 last_publish_time = 4;
+    optional int32 last_publish_message_id = 5;
+}

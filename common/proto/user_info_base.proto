@@ -1,0 +1,16 @@
+syntax = "proto3";
+package ssp;
+message UserInfoBase
+{
+    optional uint32 ver = 1;
+    optional uint32 user_id = 2;
+    optional string user_name = 3;
+    optional string nick_name = 4;
+    optional uint32 reg_time = 5;
+    optional uint32 from = 6;// 0.null,1.wx,2.qq,3.tel
+    optional uint32 login_time = 7;
+    optional uint32 last_login_time = 8;
+    optional uint32 fresh_time = 9;
+    optional string password = 10;
+    optional uint32 logout_time = 11;
+}

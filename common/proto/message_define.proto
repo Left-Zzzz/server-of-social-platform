@@ -1,0 +1,292 @@
+syntax = "proto3";
+package ssp;
+
+message ReqInfoBase
+{
+    optional int32 ver =                          1;
+    optional int32 mess_type =                    2;
+    optional RegReq reg_req =                     3;
+    optional LoginReq login_req =                 4;
+    optional LogoutReq logout_req =               5;
+    optional GetMessageReq get_mess_req =         6;
+    optional PublishMessageReq publish_mess_req = 7;
+    optional ModifyMessageReq modify_mess_req =   8;
+    optional DeleteMessageReq delete_mess_req =   9;
+    optional AddFriendReq add_friend_req =       10;
+    optional AddBlackReq add_black_req =         11;
+    optional DelFriendReq del_friend_req =       12;
+    optional DelBlackReq del_black_req =         13;
+    optional GetPhotoReq get_photo_req =         14;
+    optional DeleteUserReq delete_user_req =     15;
+    optional CreatePhotoReq create_photo_req =   16;
+    optional GetFriendsReq get_friends_req =     17;
+}
+
+message RspInfoBase
+{
+    optional int32 ver =                          1;
+    optional int32 mess_type =                    2;
+    optional RegRsp reg_rsp =                     3;
+    optional LoginRsp login_rsp =                 4;
+    optional LogoutRsp logout_rsp =               5;
+    optional GetMessageRsp get_mess_rsp =         6;
+    optional PublishMessageRsp publish_mess_rsp = 7;
+    optional ModifyMessageRsp modify_mess_rsp =   8;
+    optional DeleteMessageRsp delete_mess_rsp =   9;
+    optional AddFriendRsp add_friend_rsp =       10;
+    optional AddBlackRsp add_black_rsp =         11;
+    optional DelFriendRsp del_friend_rsp =       12;
+    optional DelBlackRsp del_black_rsp =         13;
+    optional GetPhotoRsp get_photo_rsp =         14;
+    optional DeleteUserRsp delete_user_rsp =     15;
+    optional CreatePhotoRsp create_photo_rsp =   16;
+    optional GetFriendsRsp get_friends_rsp =     17;
+}
+
+message RegReq
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //401
+    optional string user_name = 3;
+    optional string password = 4;
+    optional int32 from = 5;
+    optional int32 t1 = 31;
+    optional int32 t2 = 32;
+    optional int32 t3 = 33;
+}
+
+message RegRsp
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //402
+    optional int32 ret = 3;
+    optional int32 user_id = 4;
+}
+
+message LoginReq
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //101
+    optional int32 user_id = 3;
+    optional string user_name = 4;
+    optional string password = 5;
+}
+
+message LoginRsp
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //102
+    optional int32 ret = 3;
+    optional int32 user_id = 4;
+}
+
+message LogoutReq
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //103
+    optional int32 user_id = 3;
+}
+
+message LogoutRsp
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //104 
+    optional int32 ret = 3;
+}
+
+message DeleteUserReq
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //105
+    optional int32 user_id = 3;
+}
+
+message DeleteUserRsp
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //106 
+    optional int32 ret = 3;
+}
+
+message MessageBase
+{
+    optional int32 ver = 1;
+    optional int32 message_id = 2;
+    optional int32 publisher = 3;
+    optional string content = 4;
+    optional int32 publish_time = 5;
+    optional int32 last_modify_time = 6;
+}
+
+message PublishMessageReq
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //201
+    optional int32 user_id = 3;
+    optional string content = 4;
+    optional int32 publish_time = 5;
+}
+
+message PublishMessageRsp
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //202
+    optional int32 ret = 3;//正数表示messageid，负数表示错误码
+}
+
+
+message GetMessageReq
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //203
+    optional int32 user_id = 3;
+    int32 message_id = 4;
+}
+
+message GetMessageRsp
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //204
+    optional int32 ret = 3;
+    optional MessageBase message_info = 4;
+}
+
+message CreatePhotoReq
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //205
+    repeated int32 user_id = 3;
+    optional int32 publisher_id = 4;
+    optional int32 time = 5;
+    optional int32 message_id = 6;
+}
+
+message CreatePhotoRsp
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //206
+    optional int32 ret = 3;
+}
+
+message GetPhotoReq
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //207
+    optional int32 user_id = 3;
+}
+
+message GetPhotoRsp
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //208
+    optional int32 ret = 3;
+    repeated MessageBase message_info = 4;
+}
+
+message DeleteMessageReq
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //209
+    optional int32 user_id = 3;
+    optional int32 message_id = 4;
+}
+
+message DeleteMessageRsp
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //210
+    optional int32 ret = 3;
+}
+
+message ModifyMessageReq
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //211
+    optional int32 user_id = 3;
+    optional int32 message_id = 4;
+    optional string content = 5;
+    optional int32 modify_time = 6;
+}
+
+message ModifyMessageRsp
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //212
+    optional int32 ret = 3;
+}
+
+
+message AddFriendReq
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //301
+    optional int32 user_id = 3;
+    optional int32 other_id = 4;
+}
+
+message AddFriendRsp
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //302
+    optional int32 ret = 3;    
+}
+
+message DelFriendReq
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //303
+    optional int32 user_id = 3;
+    optional int32 other_id = 4;
+}
+
+message DelFriendRsp
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //304
+    optional int32 ret = 3;
+}
+
+message AddBlackReq
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //305
+    optional int32 user_id = 3;
+    optional int32 other_id = 4;
+}
+
+message AddBlackRsp
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; // 306
+    optional int32 ret = 3;    
+}
+
+message DelBlackReq
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //307
+    optional int32 user_id = 3;
+    optional int32 other_id = 4;
+}
+
+message DelBlackRsp
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //308
+    optional int32 ret = 3;
+}
+
+message GetFriendsReq
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //309
+    optional int32 user_id = 3;
+}
+
+message GetFriendsRsp
+{
+    optional int32 ver = 1;
+    //optional int32 mess_type = 2; //310
+    repeated int32 friend_id = 3;
+    optional int32 ret = 4;
+}

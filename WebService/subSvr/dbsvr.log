@@ -1,0 +1,226 @@
+[DbManager]获取配置文件成功！[127.0.0.1][root][left1234][ssp]
+
+User Manager Init.
+
+User Manager Start.
+
+[DbManager]获取配置文件成功！[127.0.0.1][root][left1234][ssp]
+
+User Manager Init.
+
+User Manager Start.
+
+cookies: [Hm_lvt_391ad94e89359d5aef09d7a31e4c0703=1651662464,1651667669,1651978693,1652587895]
+cut_cookies: name = [Hm_lvt_391ad94e89359d5aef09d7a31e4c0703], value = [1651662464,1651667669,1651978693,1652587895]
+instringkv: name = [Hm_lvt_391ad94e89359d5aef09d7a31e4c0703], value = [1651662464,1651667669,1651978693,1652587895]
+req_script = [/login]
+user_id = [-101]
+[LoginManager]:user_id=[-101]
+req_script = [/message]
+
+user_id = [-101]
+req_script = [/message]
+user_id = [-101]
+req_script = [/message]
+user_id = [-101]
+cookies: [Hm_lvt_391ad94e89359d5aef09d7a31e4c0703=1651662464,1651667669,1651978693,1652587895]
+cut_cookies: name = [Hm_lvt_391ad94e89359d5aef09d7a31e4c0703], value = [1651662464,1651667669,1651978693,1652587895]
+instringkv: name = [Hm_lvt_391ad94e89359d5aef09d7a31e4c0703], value = [1651662464,1651667669,1651978693,1652587895]
+req_script = [/message]
+user_id = [-101]
+req_script = [/message]
+
+user_id = [-101]
+req_script = [/message]
+user_id = [-101]
+req_script = [/message]
+user_id = [-101]
+req_script = [/xx/ss]
+user_id = [-101]
+req_script = [/xx/ss]
+
+user_id = [-101]
+req_script = [/xx/ss]
+
+user_id = [-101]
+req_script = [/login]
+
+user_id = [-101]
+req_script = [/message]
+user_id = [-101]
+req_script = [/login]
+user_id = [-101]
+[LoginManager]:user_id=[-101]
+cookies: [Hm_lvt_391ad94e89359d5aef09d7a31e4c0703=1651662464,1651667669,1651978693,1652587895]
+cut_cookies: name = [Hm_lvt_391ad94e89359d5aef09d7a31e4c0703], value = [1651662464,1651667669,1651978693,1652587895]
+instringkv: name = [Hm_lvt_391ad94e89359d5aef09d7a31e4c0703], value = [1651662464,1651667669,1651978693,1652587895]
+req_script = [/message]
+user_id = [-101]
+req_script = [/message]
+
+user_id = [-101]
+cookies: [ssp_login=ssp_login_a16501912671456010001|10001|1650209261|dcd938e86b9c40ad3a3f5f71f8bd670f25aedf5af5c37c491fb6d3dc153c6593]
+cut_cookies: name = [ssp_login], value = [ssp_login_a16501912671456010001|10001|1650209261|dcd938e86b9c40ad3a3f5f71f8bd670f25aedf5af5c37c491fb6d3dc153c6593]
+instringkv: name = [ssp_login], value = [ssp_login_a16501912671456010001|10001|1650209261|dcd938e86b9c40ad3a3f5f71f8bd670f25aedf5af5c37c491fb6d3dc153c6593]
+req_script = [/login]
+
+收到cookie：ssp_login, val = [ssp_login_a16501912671456010001|10001|1650209261|dcd938e86b9c40ad3a3f5f71f8bd670f25aedf5af5c37c491fb6d3dc153c6593]
+[TokenManager]解析Token
+[TokenManager]验证Session
+[SessionManager]:user_id=[]
+user_id = [-901]
+cookies: [ssp_login=ssp_login_a16501912671456010001|10001|1650209261|dcd938e86b9c40ad3a3f5f71f8bd670f25aedf5af5c37c491fb6d3dc153c6593]
+cut_cookies: name = [ssp_login], value = [ssp_login_a16501912671456010001|10001|1650209261|dcd938e86b9c40ad3a3f5f71f8bd670f25aedf5af5c37c491fb6d3dc153c6593]
+instringkv: name = [ssp_login], value = [ssp_login_a16501912671456010001|10001|1650209261|dcd938e86b9c40ad3a3f5f71f8bd670f25aedf5af5c37c491fb6d3dc153c6593]
+req_script = [/login]
+
+收到cookie：ssp_login, val = [ssp_login_a16501912671456010001|10001|1650209261|dcd938e86b9c40ad3a3f5f71f8bd670f25aedf5af5c37c491fb6d3dc153c6593]
+[TokenManager]解析Token
+[TokenManager]验证Session
+[SessionManager]:user_id=[]
+user_id = [-901]
+cookies: [ssp_login=ssp_login_a16501912671456010001|10001|1650209261|dcd938e86b9c40ad3a3f5f71f8bd670f25aedf5af5c37c491fb6d3dc153c6593]
+cut_cookies: name = [ssp_login], value = [ssp_login_a16501912671456010001|10001|1650209261|dcd938e86b9c40ad3a3f5f71f8bd670f25aedf5af5c37c491fb6d3dc153c6593]
+instringkv: name = [ssp_login], value = [ssp_login_a16501912671456010001|10001|1650209261|dcd938e86b9c40ad3a3f5f71f8bd670f25aedf5af5c37c491fb6d3dc153c6593]
+req_script = [/login]
+
+收到cookie：ssp_login, val = [ssp_login_a16501912671456010001|10001|1650209261|dcd938e86b9c40ad3a3f5f71f8bd670f25aedf5af5c37c491fb6d3dc153c6593]
+[TokenManager]解析Token
+[TokenManager]验证Session
+[SessionManager]:user_id=[]
+user_id = [-901]
+cookies: [ssp_login=ssp_login_a16501912671456010001|10001|1650209261|dcd938e86b9c40ad3a3f5f71f8bd670f25aedf5af5c37c491fb6d3dc153c6593]
+cut_cookies: name = [ssp_login], value = [ssp_login_a16501912671456010001|10001|1650209261|dcd938e86b9c40ad3a3f5f71f8bd670f25aedf5af5c37c491fb6d3dc153c6593]
+instringkv: name = [ssp_login], value = [ssp_login_a16501912671456010001|10001|1650209261|dcd938e86b9c40ad3a3f5f71f8bd670f25aedf5af5c37c491fb6d3dc153c6593]
+req_script = [/login]
+
+收到cookie：ssp_login, val = [ssp_login_a16501912671456010001|10001|1650209261|dcd938e86b9c40ad3a3f5f71f8bd670f25aedf5af5c37c491fb6d3dc153c6593]
+[TokenManager]解析Token
+[TokenManager]验证Session
+[SessionManager]:user_id=[]
+user_id = [-901]
+[DbManager]获取配置文件成功！[127.0.0.1][root][left1234][ssp]
+
+User Manager Init.
+
+User Manager Start.
+
+[DbManager]获取配置文件成功！[127.0.0.1][root][left1234][ssp]
+
+User Manager Init.
+
+User Manager Start.
+
+req_script = [/message]
+user_id = [-101]
+req_script = [/login]
+{"user_name":"left1","password":"1234"}
+query_string:
+user_id = [-101]
+req_script = [/login]
+user_id=left1&password=left
+user_id = [-101]
+[LoginManager]:user_id=[-101]
+req_script = [/login]
+{"user_name":"left1","password":"1234"}
+query_string:
+user_id = [-101]
+req_script = [/login]
+{"user_name":"left1","password":"1234"}
+query_string:
+user_id = [-101]
+req_script = [/login]
+{"user_name":"left1","password":"1234"}
+query_string:
+user_id = [-101]
+req_script = [/login]
+{"user_name":"left1","password":"1234"}
+query_string:
+user_id = [-101]
+req_script = [/login]
+user_name=left1&password=1234
+user_id = [-101]
+[LoginManager]:user_id=[-101]
+user_name = [left1], password = [1234]
+
+LoginCheck
+
+Sql语句:select * from tb_user where user_name = 'left1';
+
+db_query_ret = 0
+
+getuser:id:[10001],user_name:[left1]
+
+GetUserIdByUserName
+
+Sql:select user_id from tb_user where user_name = 'left1';
+[DbManager]获取配置文件成功！[127.0.0.1][root][left1234][ssp]
+
+User Manager Init.
+
+User Manager Start.
+
+[DbManager]获取配置文件成功！[127.0.0.1][root][left1234][ssp]
+
+User Manager Init.
+
+User Manager Start.
+
+req_script = [/login]
+user_name=left1&password=1234&
+user_id = [-101]
+[LoginManager]:user_id=[-101]
+user_name = [left1], password = [1234]
+
+LoginCheck
+
+Sql语句:select * from tb_user where user_name = 'left1';
+
+db_query_ret = 0
+
+getuser:id:[10001],user_name:[left1]
+
+GetUserIdByUserName
+
+Sql:select user_id from tb_user where user_name = 'left1';
+[DbManager]获取配置文件成功！[127.0.0.1][root][left1234][ssp]
+
+User Manager Init.
+
+User Manager Start.
+
+[DbManager]获取配置文件成功！[127.0.0.1][root][left1234][ssp]
+
+User Manager Init.
+
+User Manager Start.
+
+[DbManager]获取配置文件成功！[127.0.0.1][root][left1234][ssp]
+
+User Manager Init.
+
+User Manager Start.
+
+[DbManager]获取配置文件成功！[127.0.0.1][root][left1234][ssp]
+
+User Manager Init.
+
+User Manager Start.
+
+req_script = [/login]
+user_name=left1&password=1234
+user_id = [-101]
+[LoginManager]:user_id=[-101]
+user_name = [left1], password = [1234]
+
+LoginCheck
+
+Sql语句:select * from tb_user where user_name = 'left1';
+
+db_query_ret = 0
+
+getuser:id:[10001],user_name:[left1]
+
+GetUserIdByUserName
+Sql:select user_id from tb_user where user_name = 'left1';
+0

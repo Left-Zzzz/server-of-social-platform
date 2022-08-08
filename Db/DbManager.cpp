@@ -19,15 +19,14 @@ int DbManager::connectDb()
     {
         return DB_CONN_INIT_FAIL;
     }
+    my_bool reconnect = 1;
+    mysql_options(conn, MYSQL_OPT_RECONNECT, &reconnect);
+    mysql_options(conn, MYSQL_SET_CHARSET_NAME, "utf8");
     conn = mysql_real_connect(conn, host(), user(), pswd(), db_name(), 0, NULL, 0);
     if(conn == NULL)
     {
         return DB_CONN_CONNECT_FAIL;
     }
-    my_bool reconnect = 1;
-    mysql_options(conn, MYSQL_OPT_RECONNECT, &reconnect);
-    mysql_query(conn, "set names utf8");
-
     return SUCCESS;
 }
 
@@ -74,7 +73,6 @@ int DbManager::execSql(const string &sql)
     {
         if(mysql_ping(conn) == 0)
         {
-            mysql_query(conn, "set names utf8");
             return execSql(sql);
         }
         this -> log_mgr_ -> println("query fail : %s \n", mysql_error(conn));

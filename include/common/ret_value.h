@@ -1,5 +1,5 @@
 /*************************************************************************
-	> File Name: err_value.h
+	> File Name: ret_value.h
 	> Author: Left
 	> Mail: 1059051242@qq.com
 	> Created Time: Fri 07 Jan 2022 10:21:29 PM CST
@@ -58,9 +58,13 @@
 #define REQ_METHOD_NOT_EXIST -802
 #define QUERY_MESSAGE_ERR -803
 
+//Auth类状态码
 #define VALIDATE_FAILED -900
 #define SESSION_NOT_EXIST -901
 #define TOKEN_INVALID -902
 #define TOKEN_EXPIRE -903
+#define COOKIE_EMPTY -904
+#define COOKIE_KEY_NONE -905
+#define COOKIE_VAL_NONE -906
 
 #endif

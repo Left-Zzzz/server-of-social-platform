@@ -14,7 +14,7 @@
 #include <sys/file.h>
 #include "LogManager.h"
 #include "BusManager.h"
-#include "AuthLib.h"
+#include "Auth/AuthLib.h"
 #include "RelationInfo.h"
 #include "Handler/MainHandler.h"
 extern char ** environ;

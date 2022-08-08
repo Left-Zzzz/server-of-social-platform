@@ -16,14 +16,15 @@ class ResponseManager
     GETSETVAR(std::string, content_type)
     GETSETVAR(std::string, content)
 private:
-    std::vector<std::pair<std::string, std::string>> cookies_;
+    std::vector<std::string> cookies_;
     static ResponseManager *instance_;
     ResponseManager(const ResponseManager&) = delete;//禁止拷贝构造
     ResponseManager &operator=(const ResponseManager) = delete;//禁止赋值
     ResponseManager();
 public:
     static ResponseManager* GetInstance();
-    int set_cookie(std::string name, std::string value);
+    int set_cookie(std::string name, std::string &value,\
+            time_t expire = 0, int max_age = 3600, std::string &&path = "/");
     std::string GetResponse();
     ~ResponseManager();
 };

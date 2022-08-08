@@ -45,14 +45,28 @@ int LoginHandler::Handle(string &req_method, int user_id, string &input_data)
 //处理请求
 int LoginHandler::Handle(string &req_method, int user_id, stringkv &input_data)
 {
-    log_mgr -> println("crash test1.");
     log_mgr -> println("[LoginManager]:user_id=[%d]", user_id);
     ResponseManager *rsp_mgr = ResponseManager::GetInstance();
-    if(req_method != "POST")
+    if(req_method == "POST")
+    {
+        return HandleLogin(req_method, user_id, input_data);
+    }
+    else
     {
         rsp_mgr -> set_content(get_json(REQ_METHOD_NOT_EXIST, "请求方法不可用！", ""));
         return REQ_METHOD_NOT_EXIST;
     }
+    
+    return SUCCESS;
+}
+
+int LoginHandler::Handle(string &req_method, int user_id, string &input_data_body, stringkv &input_data_query)
+{
+    return Handle(req_method, user_id, input_data_body);
+}
+
+int LoginHandler::HandleLogin(string &req_method, int user_id, stringkv &input_data)
+{
     if(user_id >= 0)
     {
         rsp_mgr -> set_content(get_json(USER_EXIST, "已登录，无需重复登录！", ""));
@@ -83,16 +97,9 @@ int LoginHandler::Handle(string &req_method, int user_id, stringkv &input_data)
             rsp_mgr -> set_content(get_json(0, "登录成功", ""));
             //设置cookie
             string user_id_str = to_string(user_id);
-            //TODO CreateToken出问题,需要排查
             string ret_token = token_mgr -> CreateToken(user_id_str);
-            rsp_mgr -> set_cookie(token_mgr -> LOGIN_COOKIE_NAME, ret_token);
+            // set_cookie 交给TokenManager来做
+            return token_mgr -> CreateTokenCookie(user_id_str);
         }
     }
-    return SUCCESS;
-}
-
-int LoginHandler::Handle(string &req_method, int user_id, string &input_data_body, stringkv &input_data_query)
-{
-    log_mgr -> println("crash test1.");
-    return Handle(req_method, user_id, input_data_body);
 }

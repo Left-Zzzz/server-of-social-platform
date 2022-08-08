@@ -177,7 +177,7 @@ int MessageHandler::PublishMessageHandle(int user_id, string &input_data_body)
     log_mgr -> println("mess_type : %d\n", req_base.mess_type());
     log_mgr -> println("parse mess_type %d", req_base.mess_type());
     log_mgr -> println("ret_size = [%d]", req_base.ByteSizeLong());
-    ret = bus_mgr -> SendMessage("relaiton_write", send_buf, req_base.ByteSizeLong());
+    ret = bus_mgr -> SendMessage("relation_write", send_buf, req_base.ByteSizeLong());
     if(ret != SUCCESS)
     {
         rsp_mgr -> set_content(get_json(ret, "发送消息成功，但消息未能推送给好友", ""));
@@ -244,6 +244,7 @@ int MessageHandler::PublishMessageHandle(int user_id, string &input_data_body)
 
 int MessageHandler::ModifyMessageHandle(int user_id, string &input_data_body)
 {
+    log_mgr -> println("modify_message_handle.");
     int now = time(0);
     ssp::ReqInfoBase req_base;
     ssp::RspInfoBase rsp_base;
@@ -268,7 +269,7 @@ int MessageHandler::ModifyMessageHandle(int user_id, string &input_data_body)
     modify_mess_req -> set_content(doc["content"].GetString());
     modify_mess_req -> set_modify_time(now);
     req_base.SerializeToArray(send_buf, 10239);
-    ret = bus_mgr -> SendMessage("message_read", send_buf, req_base.ByteSizeLong());
+    ret = bus_mgr -> SendMessage("message_write", send_buf, req_base.ByteSizeLong());
     if(ret != SUCCESS)
     {
         rsp_mgr -> set_content(get_json(ret, "修改消息失败", ""));

@@ -8,6 +8,8 @@
 #ifndef _TIMECOMMON_H
 #define _TIMECOMMON_H
 #include<time.h>
+#include<string>
+using namespace std;
 class TimeCommon
 {
 public:

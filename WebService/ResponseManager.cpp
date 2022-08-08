@@ -7,6 +7,8 @@
 
 #include<bits/stdc++.h>
 #include"ResponseManager.h"
+#include"TimeCommon.h"
+#include"common/ret_value.h"
 using namespace std;
 
 //单例：类外初始化
@@ -40,7 +42,7 @@ string ResponseManager::GetResponse()
     if(!cookies_.empty())
     {
         for(const auto &s : cookies_)
-            retdata += "Set-Cookie: " + s.first + "=" + s.second + "\r\n";
+            retdata += "Set-Cookie: " + s + "\r\n";
     }
     retdata += "\r\n";
     retdata += content_;
@@ -48,9 +50,19 @@ string ResponseManager::GetResponse()
     return retdata;
 }
 
-int ResponseManager::set_cookie(std::string name, std::string value)
+int ResponseManager::set_cookie(std::string name, std::string &value,\
+     time_t expire, int max_age, std::string &&path)
 {
-    cookies_.push_back(make_pair(name, value));
+    /* 设置cookie，格式按浏览器规范格式输出
+     *
+     */
+    //Set-Cookie: userName=admin; Max-Age=3600; Path=/; Expires=Tue, 17 May 2022 17:03:34 GMT
+    std::string expire_str = TimeCommon::ConvertTimestamp(
+        expire, "%a, %d %b %Y %H:%M:%S GMT");
+    std::string cookie_info = name + "=" + value + "; Max-Age=" + 
+    to_string(max_age) + "; Path=" + path + "; Expires=" + expire_str;
+    cookies_.push_back(std::move(cookie_info));
+    return SUCCESS;
 }
 
 ResponseManager::ResponseManager()

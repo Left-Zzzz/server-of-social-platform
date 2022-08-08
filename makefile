@@ -20,14 +20,19 @@ MESSAGEHANDLER_CC=./lib/messagehandler.o
 SERVICES_CC=./lib/messageservice.o
 AUTH_CC=./lib/authlib.o
 REDIS_CC=./lib/redis.o
+TIME_COMMON_CC=./lib/timecommon.o
 
 all:redis auth handler response token bus log db user relation message photo server
+
+timecommon:common/TimeCommon.cpp 
+	g++ -c -o lib/timecommon.o ./common/TimeCommon.cpp $(INC) -g
+
 
 redis:Db/RedisManager.cpp
 	g++ -c -o lib/redis.o ./Db/RedisManager.cpp $(INC) -g
 
-authlib:WebService/AuthLib.cpp
-	g++ -c -o lib/authlib.o ./WebService/AuthLib.cpp $(INC) -g
+authlib:Auth/AuthLib.cpp
+	g++ -c -o lib/authlib.o ./Auth/AuthLib.cpp $(INC) -g
 
 log:LogManager.cpp
 	g++ -c -o lib/log.o LogManager.cpp $(INC) -g
@@ -39,7 +44,7 @@ response:WebService/ResponseManager.cpp
 	g++ -c -o lib/rsp.o ./WebService/ResponseManager.cpp $(INC) -g
 
 webservice:user 
-	g++ -g ./WebService/MainServer.cpp $(SERVICES_CC) $(HANDLERS_CC) $(AUTH_CC) $(RSP_CC) $(HANDLER_CC) $(BUS_CC) $(USER_CC) $(MESSAGE_CC) $(DB_CC) $(LOG_CC) $(PROTO_CC) $(REDIS_CC) ./lib/libfcgi/*.o -o ./WebService/MainServer $(INC) $(MYSQL_LIB) $(PROTO_LIB) $(CRYPTOLIB) $(REDISLIB)
+	g++ -g ./WebService/MainServer.cpp $(SERVICES_CC) $(HANDLERS_CC) $(AUTH_CC) $(RSP_CC) $(HANDLER_CC) $(TIME_COMMON_CC) $(BUS_CC) $(USER_CC) $(MESSAGE_CC) $(DB_CC) $(LOG_CC) $(PROTO_CC) $(REDIS_CC) ./lib/libfcgi/*.o -o ./WebService/MainServer $(INC) $(MYSQL_LIB) $(PROTO_LIB) $(CRYPTOLIB) $(REDISLIB)
 
 webservicetest:user webservice_test.cpp
 	g++ -g webservice_test.cpp ResponseManager.cpp $(BUS_CC) $(USER_CC) $(DB_CC) $(LOG_CC) $(PROTO_CC) ./lib/libfcgi/*.o -o webservicetest $(INC) $(MYSQL_LIB) $(PROTO_LIB) $(CRYPTOLIB)

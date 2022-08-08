@@ -12,7 +12,7 @@
 #include"ResponseManager.h"
 #include"common/ret_value.h"
 #include"common/messsage_type.h"
-#include"AuthLib.h"
+#include"Auth/AuthLib.h"
 #include"RedisManager.h"
 #include"LogManager.h"
 #include"UserManager.h"

@@ -18,12 +18,13 @@ private:
     LoginHandler(LoginHandler&);
     LoginHandler operator=(LoginHandler&);
     static LoginHandler *instance_;
-    const string SCRIPT_NAME_ = "/login";
+    const string SCRIPT_NAME_ = "/user/login";
 public:
     virtual int Handle(string &req_method, int user_id, string &input_data);
     virtual int Handle(string &req_method, int user_id, stringkv &input_data);
     static LoginHandler *GetInstance();
     int Handle(string &req_method, int user_id, string &input_data_body, stringkv &input_data_query);
+    int HandleLogin(string &req_method, int user_id, stringkv &input_data);
 
 };
 #endif

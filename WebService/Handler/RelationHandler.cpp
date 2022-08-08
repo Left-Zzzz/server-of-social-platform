@@ -48,43 +48,6 @@ int RelationHandler::Handle(string &req_method, int user_id, stringkv &input_dat
     log_mgr -> println("[RelationHandler]:user_id=[%d]", user_id);
     rsp_mgr -> set_content(get_json(REQ_METHOD_NOT_EXIST, "请求方法不可用！", ""));
     return REQ_METHOD_NOT_EXIST;
-    /*
-    if(user_id >= 0)
-    {
-        rsp_mgr -> set_content(get_json(USER_EXIST, "已登录，无需重复登录！", ""));
-        return USER_EXIST;
-    }
-    //这里应该是查表单
-    if(!input_data.count("user_name") || !input_data.count("password"))
-    {
-        rsp_mgr -> set_content(get_json(VALIDATE_FAILED, "请求的信息错误!", ""));
-        return VALIDATE_FAILED;
-    }
-    //成功处理
-    else
-    {
-        int ret = -1;
-        log_mgr -> println("user_name = [%s], password = [%s]\n", input_data["user_name"].c_str(), input_data["password"].c_str());
-        
-        ret = user_mgr.LoginCheck(input_data["user_name"], input_data["password"]);
-        if(ret != SUCCESS)
-        {
-            rsp_mgr -> set_content(get_json(ret, "登录失败", ""));
-            return ret;
-        }
-        //todo：调用UserSvr的Login，成功的话设置Cookie
-        else
-        {
-            int user_id = user_mgr.GetUserIdByUserName(input_data["user_name"]);
-            rsp_mgr -> set_content(get_json(0, "登录成功", "user_id:" + to_string(user_id)));
-            //todo:设置cookie
-            string user_id_str = to_string(user_id);
-            string ret_token = token_mgr -> CreateToken(user_id_str);
-            rsp_mgr -> set_cookie(token_mgr -> LOGIN_COOKIE_NAME, ret_token);
-        }
-    }
-    return SUCCESS;
-    */
 }
 
 int RelationHandler::Handle(string &req_method, int user_id, string &input_data_body, stringkv &input_data_query)

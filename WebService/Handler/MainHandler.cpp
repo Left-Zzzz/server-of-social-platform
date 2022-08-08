@@ -143,6 +143,5 @@ int MainHandler::Handle(string &req_method, int user_id, stringkv &input_data)
 
 int MainHandler::Handle(string &req_method, int user_id, string &input_data_body, stringkv &input_data_query)
 {
-    rsp_mgr -> set_status("404 Not Found");
-    return SCRIPT_NOT_EXIST;
+    return Handle(req_method, user_id, input_data_body);
 }
